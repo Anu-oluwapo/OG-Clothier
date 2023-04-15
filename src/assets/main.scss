@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-family;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+h3 {
+  font-size: $h3-font-size;
+}
+p {
+  &.body-1 {
+    font-size: $p1-font-size;
+  }
+
+  &.body-2 {
+    font-size: $p2-font-size;
+  }
+  &.body-3 {
+    font-family: $font-family-2;
+    font-size: $p1-font-size;
+    font-weight: $font-weight;
+  }
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
