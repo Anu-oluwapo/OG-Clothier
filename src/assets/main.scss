@@ -9,6 +9,18 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
+
+  @media (max-width: $large) {
+    font-size: 60%;
+  }
+  @media (max-width: $medium) {
+    font-size: 50%;
+  }
+
+  @media (max-width: $xxSmall) {
+    font-size: 35%;
+  }
 }
 
 body {
@@ -17,6 +29,9 @@ body {
 
 h1 {
   font-size: $h1-font-size;
+}
+h2 {
+  font-size: $h2-font-size;
 }
 h3 {
   font-size: $h3-font-size;
@@ -36,10 +51,92 @@ p {
   }
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.container {
+  max-width: 90%;
+  margin: auto;
 
-  font-weight: normal;
+  @media (min-width: $xLarge) {
+    max-width: $xLarge;
+  }
+}
+
+header {
+  border-bottom: 1.5px solid $black;
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+
+    .nav-link {
+      display: flex;
+      padding: 2rem 4%;
+      justify-content: center;
+      align-items: center;
+
+      &:not(:last-child) {
+        border-right: 1.5px solid $black;
+      }
+
+      a {
+        font-size: $p2-font-size;
+      }
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 8%;
+      border-right: 1.5px solid $black;
+    }
+  }
+}
+
+.hero-section {
+  h1 {
+    color: $white;
+  }
+
+  .container {
+    .reel-container {
+      background-image: url("../../public/images/hero.png");
+      margin: 5rem 0;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1.5px solid black;
+      border-top: 1.5px solid black;
+
+      @media (min-width: $xLarge) {
+        height: 110rem;
+      }
+
+      .play-reel {
+        cursor: pointer;
+        display: flex;
+        height: 15rem;
+        width: 15rem;
+        border-radius: 100px;
+        background: $white;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .circular-arrow {
+        position: absolute;
+        align-self: end;
+        margin: 5rem;
+        bottom: -15rem;
+
+        @media (min-width: $xLarge) {
+          top: 105rem;
+          bottom: 0;
+        }
+      }
+    }
+  }
 }
