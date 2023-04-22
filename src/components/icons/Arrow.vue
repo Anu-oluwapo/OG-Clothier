@@ -1,5 +1,6 @@
 <template>
   <svg
+    class="arrow"
     width="32"
     height="24"
     viewBox="0 0 32 24"
@@ -7,6 +8,7 @@
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
+      class="arrowPath"
       d="M20 24L17.2 21.1L24.3 14H0V10H24.3L17.2 2.9L20 0L32 12L20 24Z"
       fill="#2F2E2E"
     />

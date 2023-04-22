@@ -3,25 +3,33 @@
   src: url(./fonts/HelveticaMedExt.ttf);
 }
 
+@font-face {
+  font-family: Matroska;
+  src: url(./fonts/MATROSKA.ttf.woff);
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap");
 //Fonts
 $font-family: HelveticaExtended;
 $font-family-2: Manrope;
+$font-family-3: Matroska;
 $font-weight: 500;
 $bold-font-weight: 700;
 
 $h1-font-size: 9.6rem;
 $h2-font-size: 6.4rem;
-$h3-font-size: 3.2rem;
+$h3-font-size: 3.6rem;
+$h4-font-size: 3.2rem;
 $p1-font-size: 2.4rem;
 $p2-font-size: 2rem;
+$bold-font-size: 12.8rem;
 $nav-font-size: 1.4rem;
 $button-font-size: 2.5rem;
 
 //Colors
 $black: #050505;
 $white: #ffffff;
-$neutral: #242424;
+$neutral: #2f2e2e;
 $neutral2: #f0f1f1;
 // $bg-light: #a7a7a7;
 $bg-light: #d9d9d9;
