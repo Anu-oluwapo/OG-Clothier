@@ -345,7 +345,7 @@ header {
     .category {
       border-bottom: 1.5px solid $black;
       padding: 5rem 0;
-      position: relative;
+      // position: relative;
       .container {
         display: flex;
         justify-content: space-between;
@@ -354,23 +354,35 @@ header {
 
       .img-container {
         position: absolute;
-        top: 0;
+        top: 50%;
+        left: 50%;
         overflow: hidden;
         width: 0;
         transition: width 0.3s ease;
-        transform: translate(-25%, -50%);
+        transform: translate(-50%, -50%);
         border: none;
+        z-index: -1;
+        backface-visibility: hidden;
 
         img {
           transition: all 0.2s ease;
-          object-fit: cover;
+          // object-fit: cover;
+          width: 63.5rem;
         }
       }
 
       &:hover {
         .img-container {
-          width: 100%;
+          width: 63.5rem;
         }
+
+        .arrow {
+          transform: rotate(135deg);
+        }
+      }
+
+      .arrow {
+        transition: all 0.3s ease;
       }
     }
   }
