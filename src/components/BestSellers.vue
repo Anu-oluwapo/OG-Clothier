@@ -77,6 +77,11 @@
         </div>
       </div>
 
+      <div class="controls">
+        <div @click="scroll('l')" class="control"><Arrow /></div>
+        <div @click="scroll('r')" class="control"><Arrow /></div>
+      </div>
+
       <button class="btn btn_1">Shop Now</button>
     </div>
   </section>
@@ -84,6 +89,29 @@
 
 <script setup>
 import SectionHeader from "./SectionHeader.vue";
+import Arrow from "./icons/Arrow.vue";
+import { onMounted } from "vue";
+let left = 0;
+function scroll(direction) {
+  const container = document.querySelector(".best-sellers");
+
+  var scrollMax = container.clientWidth;
+  var scrollMin = 0;
+
+  if (direction == "l" && left > scrollMin) {
+    left -= 600;
+  }
+  if (direction == "r" && left < scrollMax) {
+    left += 600;
+  }
+
+  container.scrollTo({
+    top: 0,
+    left: left,
+    behavior: "smooth",
+  });
+}
+onMounted(() => {});
 </script>
 
 <style lang="scss" scoped></style>

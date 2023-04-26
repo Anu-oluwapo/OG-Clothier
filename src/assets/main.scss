@@ -285,54 +285,92 @@ header {
 
 .best-sellers-section {
   padding-bottom: 5rem;
-  .best-sellers {
-    width: 100%;
-    display: flex;
-    overflow-x: scroll;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    .best-seller {
-      margin-right: 2rem;
-      .image {
-        border: 1.5px solid $black;
-        text-align: center;
-        background-color: $neutral2;
-        img {
-          margin-bottom: -0.2rem;
-          // width: 100%;
-        }
-      }
-      .description {
-        display: flex;
-        justify-content: space-between;
-        border: 1.5px solid $black;
-        margin: 2rem 0;
-        .title {
-          padding: 3rem;
-        }
-
-        .price {
-          border-left: 1.5px solid $black;
-          padding: 3rem;
-          display: flex;
-          align-items: center;
-        }
-      }
-    }
-
-    .cta {
-      p {
-        line-height: 6rem;
-        margin: 10rem 0 5rem 0;
-      }
-    }
-  }
   .container {
     button {
       display: block;
       margin: 7rem auto;
+    }
+
+    .controls {
+      display: flex;
+      div {
+        padding: 2rem;
+        border-radius: 50%;
+        background-color: $black;
+        margin: 2rem 1rem;
+        border: 1.5px solid $black;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $white;
+
+          .arrow {
+            path {
+              fill: $black;
+            }
+          }
+        }
+
+        &:nth-child(1) {
+          .arrow {
+            transform: rotate(180deg);
+          }
+        }
+
+        .arrow {
+          path {
+            fill: $white;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+    .best-sellers {
+      width: 100%;
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: mandatory;
+      scroll-snap-align: center;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .best-seller {
+        margin-right: 2rem;
+        .image {
+          border: 1.5px solid $black;
+          text-align: center;
+          background-color: $neutral2;
+          img {
+            margin-bottom: -0.2rem;
+            // width: 100%;
+          }
+        }
+        .description {
+          display: flex;
+          justify-content: space-between;
+          border: 1.5px solid $black;
+          margin: 2rem 0;
+          .title {
+            padding: 3rem;
+          }
+
+          .price {
+            border-left: 1.5px solid $black;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      .cta {
+        p {
+          line-height: 6rem;
+          margin: 10rem 0 5rem 0;
+        }
+      }
     }
   }
 }
@@ -350,6 +388,10 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        h3 {
+          mix-blend-mode: overlay;
+        }
       }
 
       .img-container {
@@ -358,7 +400,8 @@ header {
         left: 50%;
         overflow: hidden;
         width: 0;
-        transition: width 0.3s ease;
+        opacity: 0;
+        transition: width 0.2s ease, opacity 0.2s ease;
         transform: translate(-50%, -50%);
         border: none;
         z-index: -1;
@@ -374,6 +417,7 @@ header {
       &:hover {
         .img-container {
           width: 63.5rem;
+          opacity: 1;
         }
 
         .arrow {
@@ -393,23 +437,31 @@ header {
   overflow: hidden;
 
   .campaign {
+    position: relative;
     h1,
     h3 {
       font-family: $font-family-3;
       &.bold-text {
         font-size: $bold-font-size;
+        color: rgba(0, 0, 0, 0);
         letter-spacing: -20px;
         -webkit-text-stroke: 1.5px $white;
+        backface-visibility: hidden;
       }
     }
 
     &--1 {
       display: flex;
-      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 25rem;
       h1 {
         margin-left: -50rem;
+        position: absolute;
+        white-space: nowrap;
       }
       .circle {
+        position: absolute;
+        right: 0;
         margin-top: -10rem;
         height: 30rem;
         width: 30rem;
@@ -418,6 +470,7 @@ header {
         align-items: center;
         justify-content: center;
         background-color: blue;
+        justify-self: end;
         h3 {
           color: $white;
         }
@@ -425,14 +478,22 @@ header {
     }
     &--2 {
       display: flex;
-      justify-content: space-between;
+      width: 100%;
+      padding-top: 20rem;
 
       h1 {
+        right: 0;
         margin-right: -50rem;
+        position: absolute;
+        bottom: 0;
+        white-space: nowrap;
       }
 
       .circle {
+        position: absolute;
         margin-bottom: -10rem;
+        left: 0;
+        bottom: 0;
         height: 30rem;
         width: 30rem;
         border-radius: 50%;
