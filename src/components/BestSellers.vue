@@ -82,7 +82,7 @@
         <div @click="scroll('r')" class="control"><Arrow /></div>
       </div>
 
-      <button class="btn btn_1">Shop Now</button>
+      <button class="btn btn_1"><span>Shop Now</span></button>
     </div>
   </section>
 </template>

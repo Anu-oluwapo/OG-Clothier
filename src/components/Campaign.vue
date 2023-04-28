@@ -15,26 +15,26 @@
 
 <script setup>
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { onMounted } from "vue";
 
-onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-  const campaignTl = gsap.timeline();
+onMounted(() => {
+  const campaignTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".campaign-section",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 2,
+    },
+  });
 
   campaignTl
     .to(
       ".bt-1",
       {
         marginLeft: "0px",
-        scrollTrigger: {
-          trigger: ".campaign-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 2,
-        },
       },
       0
     )
@@ -42,12 +42,6 @@ onMounted(() => {
       ".bt-2",
       {
         marginRight: "0px",
-        scrollTrigger: {
-          trigger: ".campaign-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 2,
-        },
       },
       0
     )
@@ -55,12 +49,6 @@ onMounted(() => {
       ".circle",
       {
         scale: 1.3,
-        scrollTrigger: {
-          trigger: ".campaign-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 2,
-        },
       },
       0
     );

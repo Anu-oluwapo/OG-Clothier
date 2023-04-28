@@ -52,7 +52,7 @@
             Made with high-quality materials.
           </p>
 
-          <button class="btn btn_1">Shop Now</button>
+          <button class="btn btn_1"><span>Shop Now</span></button>
         </div>
       </div>
     </div>
