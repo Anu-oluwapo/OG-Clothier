@@ -8,7 +8,7 @@
         id="reel-container"
         class="reel-container"
       >
-        <h1>OG CLOTHIER</h1>
+        <h1 id="hero-text">OG CLOTHIER</h1>
         <div class="play-reel">
           <p class="body-1">Play <br />Reel</p>
         </div>
@@ -37,14 +37,18 @@ function moveCircle(e) {
 
 function timer() {
   const reelContainer = document.getElementById("reel-container");
+  const heroText = document.getElementById("hero-text");
   setTimeout(() => {
     reelContainer.style.backgroundImage = 'url("/images/vid1.gif")';
-  }, 1000);
+    heroText.style.mixBlendMode = "difference";
+  }, 500);
 }
 
 function reset() {
   const reelContainer = document.getElementById("reel-container");
+  const heroText = document.getElementById("hero-text");
   reelContainer.style.backgroundImage = 'url("/images/hero.png")';
+  heroText.style.mixBlendMode = "normal";
 }
 </script>
 
