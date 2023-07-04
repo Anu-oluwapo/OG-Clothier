@@ -3,12 +3,14 @@
     <div class="newsletter">
       <div class="container">
         <p class="body-1">Subscribe To Our Newsletter</p>
-        <input
-          type="email"
-          class="newsletter-input"
-          placeholder="youremail@email.com"
-        />
-        <Arrow />
+        <div>
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="youremail@email.com"
+          />
+          <Arrow />
+        </div>
       </div>
     </div>
 

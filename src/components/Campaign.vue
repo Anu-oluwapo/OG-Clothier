@@ -25,8 +25,8 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".campaign-section",
       start: "top bottom",
-      end: "bottom top",
-      scrub: 2,
+      end: "bottom+=100 top",
+      scrub: 0,
     },
   });
 

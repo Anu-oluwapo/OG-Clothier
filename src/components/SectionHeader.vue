@@ -41,6 +41,12 @@ section {
       p {
         margin: 2rem 0;
       }
+
+      h2 {
+        @media (max-width: $small) {
+          font-size: xx-large;
+        }
+      }
       flex-grow: 1;
     }
 
@@ -54,6 +60,11 @@ section {
 
       .arrow {
         transition: all 0.3s ease;
+
+        @media (max-width: $small) {
+          height: auto;
+          width: 3rem;
+        }
       }
 
       &:hover {

@@ -17,6 +17,9 @@ html {
   @media (max-width: $medium) {
     font-size: 50%;
   }
+  @media (max-width: $small) {
+    font-size: 45%;
+  }
 
   @media (max-width: $xxSmall) {
     font-size: 35%;
@@ -103,9 +106,12 @@ p {
 header {
   border-bottom: 1.5px solid $black;
 
-  .nav-links {
+  .nav-links.desktop-nav {
     display: flex;
     justify-content: center;
+    @media (max-width: $small) {
+      display: none;
+    }
 
     .nav-link {
       display: flex;
@@ -152,11 +158,70 @@ header {
       border-right: 1.5px solid $black;
     }
   }
+
+  .nav-links.mobile-nav {
+    display: flex;
+    justify-content: center;
+    @media (min-width: $small) {
+      display: none;
+    }
+
+    .nav-link {
+      display: none;
+      padding: 2rem 4%;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        background-color: $black;
+        content: " ";
+        width: 95%;
+        height: 80%;
+        left: -100%;
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        // background-color: $black;
+        color: $white;
+
+        &::before {
+          left: 0%;
+        }
+      }
+
+      &:not(:last-child) {
+        border-right: 1.5px solid $black;
+      }
+
+      a {
+        font-size: $p2-font-size;
+        mix-blend-mode: difference;
+      }
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 30%;
+      border-right: 1.5px solid $black;
+      @media (max-width: $small) {
+        border-left: 1.5px solid $black;
+      }
+    }
+  }
 }
 
 .hero-section {
   h1 {
     color: $white;
+    @media (max-width: $small) {
+      text-align: center;
+    }
     // transition: all 0.3s ease;
   }
 
@@ -232,6 +297,11 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
+
+    @media (max-width: $small) {
+      grid-template-columns: 1fr;
+    }
+
     .arrival {
       .image {
         border: 1.5px solid $black;
@@ -239,7 +309,7 @@ header {
         background-color: $neutral2;
         img {
           margin-bottom: -0.2rem;
-          // width: 100%;
+          width: 100%;
         }
       }
       .description {
@@ -261,9 +331,16 @@ header {
     }
 
     .cta {
+      @media (max-width: $small) {
+        text-align: center;
+      }
       p {
         line-height: 6rem;
         margin: 10rem 0 5rem 0;
+
+        @media (max-width: $small) {
+          margin: 0rem 0 5rem 0;
+        }
       }
 
       .btn::before {
@@ -278,9 +355,16 @@ header {
   .collections {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $small) {
+      flex-direction: column;
+    }
+
     .flex-1 {
       flex-grow: 1;
       margin-right: 1.5rem;
+      @media (max-width: $small) {
+        margin-right: 0;
+      }
     }
     .flex-2 {
       margin-left: 1.5rem;
@@ -288,12 +372,19 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @media (max-width: $small) {
+        margin-left: 0;
+      }
     }
 
     .collection {
       border: 1.5px solid $black;
       position: relative;
       overflow: hidden;
+
+      @media (max-width: $small) {
+        margin: 1rem 0;
+      }
 
       img {
         width: 100%;
@@ -416,12 +507,16 @@ header {
 
       .best-seller {
         margin-right: 2rem;
+
         .image {
           border: 1.5px solid $black;
           text-align: center;
           background-color: $neutral2;
           img {
             margin-bottom: -0.2rem;
+            @media (max-width: $small) {
+              width: 35rem;
+            }
             // width: 100%;
           }
         }
@@ -525,6 +620,10 @@ header {
         letter-spacing: -20px;
         -webkit-text-stroke: 1.5px $white;
         backface-visibility: hidden;
+        @media (max-width: $small) {
+          font-size: $h1-font-size;
+          letter-spacing: -10px;
+        }
       }
     }
 
@@ -549,6 +648,11 @@ header {
         justify-content: center;
         background-color: blue;
         justify-self: end;
+        @media (max-width: $small) {
+          height: 25rem;
+          width: 25rem;
+          margin-top: -8rem;
+        }
         h3 {
           color: $white;
         }
@@ -558,6 +662,9 @@ header {
       display: flex;
       width: 100%;
       padding-top: 20rem;
+      @media (max-width: $small) {
+        padding-top: 10rem;
+      }
 
       h1 {
         right: 0;
@@ -579,8 +686,16 @@ header {
         align-items: center;
         justify-content: center;
         background-color: orangered;
+        @media (max-width: $small) {
+          height: 25rem;
+          width: 25rem;
+          margin-bottom: -10rem;
+        }
         h3 {
           color: $white;
+          @media (max-width: $small) {
+            font-size: $h4-font-size;
+          }
         }
       }
     }
@@ -599,13 +714,30 @@ header {
       display: flex;
       justify-content: space-between;
       padding: 5rem 0;
+      @media (max-width: $small) {
+        flex-direction: column;
+      }
+
       p {
         width: 60%;
         line-height: 5rem;
+
+        @media (max-width: $small) {
+          width: 100%;
+          margin-bottom: 3rem;
+          text-align: center;
+        }
       }
 
-      .btn {
-        display: inline-block;
+      div {
+        @media (max-width: $small) {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        .btn {
+          display: inline-block;
+        }
       }
     }
   }
@@ -620,6 +752,7 @@ header {
   .newsletter {
     border-bottom: 1.5px solid $white;
     border-top: 1.5px solid $white;
+
     // margin: 5rem 0;
     .container {
       display: flex;
@@ -627,24 +760,37 @@ header {
       justify-content: space-between;
       align-items: center;
       padding: 5rem 0;
-
-      input {
-        background-color: $black;
-        border: 1.5px solid $white;
-        padding: 2rem;
-        width: 60%;
-        border-radius: none;
-        font-family: $font-family;
-        font-size: $p1-font-size;
-        color: $white;
+      @media (max-width: $small) {
+        flex-direction: column;
       }
 
-      .arrow {
-        position: absolute;
-        right: 3rem;
+      div {
+        display: flex;
+        align-items: center;
+        width: 60%;
+        @media (max-width: $medium) {
+          width: 100%;
+          margin: 2rem 0;
+        }
 
-        path {
-          fill: $white;
+        input {
+          background-color: $black;
+          border: 1.5px solid $white;
+          padding: 2rem;
+          width: 100%;
+          border-radius: none;
+          font-family: $font-family;
+          font-size: $p1-font-size;
+          color: $white;
+        }
+
+        .arrow {
+          position: absolute;
+          right: 2rem;
+
+          path {
+            fill: $white;
+          }
         }
       }
     }
@@ -655,10 +801,22 @@ header {
     .container {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 2fr;
+      @media (max-width: $medium) {
+        grid-template-columns: 1fr 1fr;
+      }
 
       .logo {
         display: flex;
         align-items: end;
+        @media (max-width: $medium) {
+          border-bottom: 1.5px solid $white;
+        }
+
+        img {
+          @media (max-width: $small) {
+            width: 25rem;
+          }
+        }
       }
 
       .footer-links {
@@ -667,18 +825,20 @@ header {
         display: flex;
         flex-direction: column;
         align-items: start;
-        p {
-          text-decoration-line: underline;
-        }
+        ul {
+          p {
+            text-decoration-line: underline;
+          }
 
-        a {
-          text-decoration: none;
+          a {
+            text-decoration: none;
 
-          li {
-            margin: 2rem 0;
-            font-size: $p2-font-size;
-            color: $white;
-            list-style-type: none;
+            li {
+              margin: 2rem 0;
+              font-size: $p2-font-size;
+              color: $white;
+              list-style-type: none;
+            }
           }
         }
 
@@ -687,6 +847,12 @@ header {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 3rem;
+          @media (max-width: $medium) {
+            border-top: 1.5px solid $white;
+            border-right: 1.5px solid $white;
+            margin-top: 2rem;
+            padding-top: 5rem;
+          }
           a {
             font-size: $p2-font-size;
             flex-grow: 1;
