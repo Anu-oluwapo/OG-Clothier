@@ -44,7 +44,7 @@ section {
 
       h2 {
         @media (max-width: $small) {
-          font-size: xx-large;
+          font-size: 3.2rem;
         }
       }
       flex-grow: 1;
@@ -55,6 +55,14 @@ section {
         text-decoration: none;
         font-size: 3.2rem;
         color: $black;
+
+        @media (max-width: $small) {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: $small) {
+        padding-bottom: 0.4rem;
       }
       padding-bottom: 1rem;
 
@@ -63,7 +71,7 @@ section {
 
         @media (max-width: $small) {
           height: auto;
-          width: 3rem;
+          width: 2.5rem;
         }
       }
 

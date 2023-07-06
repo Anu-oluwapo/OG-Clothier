@@ -160,10 +160,28 @@ header {
   }
 
   .nav-links.mobile-nav {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
     @media (min-width: $small) {
       display: none;
+    }
+
+    .hamburger {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      border-right: 1.5px solid $black;
+      padding: 0rem 2rem;
+      cursor: pointer;
+
+      .line {
+        background-color: $black;
+        border: none;
+        width: 5rem;
+        margin: 0.5rem 0;
+        height: 0.4rem;
+      }
     }
 
     .nav-link {
@@ -207,11 +225,14 @@ header {
     .logo {
       display: flex;
       justify-content: center;
-      padding: 2rem 30%;
+      padding: 2rem 0;
       border-right: 1.5px solid $black;
       @media (max-width: $small) {
-        border-left: 1.5px solid $black;
+        // border-left: 1.5px solid $black;
       }
+    }
+
+    .empty {
     }
   }
 }
@@ -239,6 +260,13 @@ header {
       justify-content: center;
       border: 1.5px solid black;
       transition: all 0.5s ease;
+
+      @media (max-width: $small) {
+        height: 70rem;
+        h1 {
+          font-size: $h2-font-size;
+        }
+      }
       // h1 {
       //   transition: all 1s ease;
       // }
@@ -272,6 +300,9 @@ header {
         align-items: center;
         justify-content: center;
         // transition: all 0.1s ease;
+        @media (max-width: $small) {
+          display: none;
+        }
       }
 
       .circular-arrow {
@@ -280,6 +311,9 @@ header {
         margin: 5rem;
         bottom: -15rem;
         transition: all 0.3s ease;
+        @media (max-width: $small) {
+          display: none;
+        }
 
         @media (min-width: $xLarge) {
           top: 105rem;
@@ -746,6 +780,7 @@ header {
 .footer-section {
   background-color: $black;
   padding: 5rem 0;
+
   p {
     color: $white;
   }
@@ -800,6 +835,7 @@ header {
     border-bottom: 1.5px solid $white;
     .container {
       display: grid;
+      max-width: 100%;
       grid-template-columns: 2fr 1fr 1fr 2fr;
       @media (max-width: $medium) {
         grid-template-columns: 1fr 1fr;
@@ -814,7 +850,8 @@ header {
 
         img {
           @media (max-width: $small) {
-            width: 25rem;
+            width: 20rem;
+            margin-left: 2rem;
           }
         }
       }
@@ -826,6 +863,9 @@ header {
         flex-direction: column;
         align-items: start;
         ul {
+          @media (max-width: $small) {
+            padding-left: 2rem;
+          }
           p {
             text-decoration-line: underline;
           }
@@ -851,7 +891,7 @@ header {
             border-top: 1.5px solid $white;
             border-right: 1.5px solid $white;
             margin-top: 2rem;
-            padding-top: 5rem;
+            padding: 5rem 1rem 0rem 2rem;
           }
           a {
             font-size: $p2-font-size;
