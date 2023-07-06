@@ -10,6 +10,7 @@
     <div class="container">
       <div class="content">
         <div class="arrival">
+          <ItemIcons />
           <div class="image">
             <img src="/images/img1.png" />
           </div>
@@ -22,6 +23,7 @@
         </div>
 
         <div class="arrival">
+          <ItemIcons />
           <div class="image">
             <img src="/images/img2.png" />
           </div>
@@ -34,6 +36,7 @@
         </div>
 
         <div class="arrival">
+          <ItemIcons />
           <div class="image">
             <img src="/images/img3.png" />
           </div>
@@ -61,6 +64,7 @@
 
 <script setup>
 import SectionHeader from "./SectionHeader.vue";
+import ItemIcons from "./ItemIcons.vue";
 </script>
 
 <style lang="scss" scoped></style>
