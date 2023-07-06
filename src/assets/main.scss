@@ -186,8 +186,8 @@ header {
     }
 
     .nav-link {
-      display: none;
-      padding: 2rem 4%;
+      // display: none;
+      padding: 0rem 0rem 0rem 2rem;
       justify-content: center;
       align-items: center;
       cursor: pointer;
@@ -238,7 +238,8 @@ header {
       align-items: center;
       .bi-cart2 {
         width: 100%;
-        height: 4rem;
+        height: 3rem;
+        font-weight: 900;
       }
     }
   }
