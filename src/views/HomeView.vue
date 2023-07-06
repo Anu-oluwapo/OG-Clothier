@@ -1,4 +1,5 @@
 <template>
+  <Toast />
   <Header />
   <Hero />
   <NewArrivals />
@@ -20,4 +21,5 @@ import LookBook from "../components/LookBook.vue";
 import Campaign from "../components/Campaign.vue";
 import About from "../components/About.vue";
 import Footer from "../components/Footer.vue";
+import Toast from "../components/Toast.vue";
 </script>
