@@ -175,6 +175,7 @@ header {
       border-right: 1.5px solid $black;
       padding: 0rem 2rem 0rem 0rem;
       cursor: pointer;
+      width: 100%;
 
       .line {
         background-color: $black;
@@ -194,6 +195,7 @@ header {
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      color: $black;
 
       // &::before {
       //   position: absolute;
