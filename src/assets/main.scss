@@ -197,15 +197,9 @@ header {
       overflow: hidden;
       color: $black;
 
-      // &::before {
-      //   position: absolute;
-      //   background-color: $black;
-      //   content: " ";
-      //   width: 95%;
-      //   height: 80%;
-      //   left: -100%;
-      //   transition: all 0.3s ease;
-      // }
+      &::before {
+        display: none;
+      }
       // &:hover {
       //   // background-color: $black;
       //   color: $white;
