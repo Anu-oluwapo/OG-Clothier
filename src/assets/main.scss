@@ -330,6 +330,12 @@ header {
 
 .arrivals-section {
   padding-bottom: 5rem;
+  br {
+    @media (max-width: $small) {
+      display: none;
+    }
+  }
+
   .content {
     width: 100%;
     display: grid;
