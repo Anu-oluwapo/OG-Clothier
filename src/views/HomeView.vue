@@ -1,5 +1,12 @@
 <template>
-  <Toast />
+  <div class="toasts">
+    <Toast
+      v-for="toast in mainStore.toasts"
+      :message="toast.message"
+      :color="toast.color"
+      :id="mainStore.toasts.indexOf(toast)"
+    />
+  </div>
   <Header />
   <Hero />
   <NewArrivals />
@@ -22,4 +29,9 @@ import Campaign from "../components/Campaign.vue";
 import About from "../components/About.vue";
 import Footer from "../components/Footer.vue";
 import Toast from "../components/Toast.vue";
+
+import { useMainStore } from "../stores/index";
+const mainStore = useMainStore();
 </script>
+
+<style lang="scss"></style>

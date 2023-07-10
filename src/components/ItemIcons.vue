@@ -1,6 +1,13 @@
 <template>
   <div class="item-icons">
-    <div @click="like = !like" class="like">
+    <div
+      @click="
+        (like = !like),
+          toast(`Item ${!like ? 'Added To' : 'Removed From'} Like List`, 'pink')
+      "
+      id="like"
+      class="like"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -15,7 +22,16 @@
         />
       </svg>
     </div>
-    <div @click="bookmark = !bookmark" class="bookmark">
+    <div
+      @click="
+        (bookmark = !bookmark),
+          toast(
+            `Item ${!bookmark ? 'Added To' : 'Removed From'} Bookmarks`,
+            'orange'
+          )
+      "
+      class="bookmark"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -34,9 +50,17 @@
 
 <script setup>
 import { ref } from "vue";
+import { toastify } from "../helpers/toast";
+// import { mapActions } from "pinia";
+import { useMainStore } from "../stores/index";
 
 const like = ref("false");
 const bookmark = ref("false");
+const mainStore = useMainStore();
+
+function toast(message, color) {
+  mainStore.addToast({ message: message, color: color });
+}
 </script>
 
 <style lang="scss" scoped>
@@ -58,6 +82,10 @@ const bookmark = ref("false");
     opacity: 0;
     transition: all 0.3s ease;
     cursor: pointer;
+
+    &:hover {
+      scale: 1.1;
+    }
   }
 }
 </style>
