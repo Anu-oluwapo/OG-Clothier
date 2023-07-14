@@ -10,7 +10,14 @@
         </div>
         <div class="nav-link"><a>ABOUT</a></div>
         <div class="nav-link"><a>SEARCH</a></div>
-        <div class="nav-link"><a>CART</a></div>
+        <div
+          @mouseover="showCart()"
+          @mouseleave="reset()"
+          class="nav-link cart-link"
+        >
+          <a>CART&nbsp({{ mainStore.cart.length }})</a>
+        </div>
+        <HoverCart />
       </div>
 
       <div class="nav-links mobile-nav">
@@ -44,6 +51,20 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import HoverCart from "./HoverCart.vue";
+import { useMainStore } from "../stores";
+const mainStore = useMainStore();
+
+function showCart() {
+  const hoverCart = document.querySelector(".container#hoverCart");
+  if (mainStore.cart.length !== 0) hoverCart.style.opacity = 1;
+}
+
+function reset() {
+  const hoverCart = document.querySelector(".container#hoverCart");
+  hoverCart.style.opacity = 0;
+}
+</script>
 
 <style lang="scss" scoped></style>

@@ -14,7 +14,20 @@
           <div class="image">
             <img src="/images/img1.png" />
           </div>
-          <div class="description">
+          <div
+            @click="
+              mainStore.addToCart({
+                name: 'Wool x Buffer Jacket',
+                price: 110,
+                image: '/images/img1.png',
+              }),
+                mainStore.addToast({
+                  color: 'black',
+                  message: 'Wool x Buffer Jacket Added To Cart',
+                })
+            "
+            class="description"
+          >
             <div class="title">
               <p class="body-2">Wool x Buffer Jacket</p>
             </div>
@@ -27,7 +40,20 @@
           <div class="image">
             <img src="/images/img2.png" />
           </div>
-          <div class="description">
+          <div
+            @click="
+              mainStore.addToCart({
+                name: 'Buffer Jacket',
+                price: 90,
+                image: '/images/img2.png',
+              }),
+                mainStore.addToast({
+                  color: 'black',
+                  message: 'Buffer Jacket Added To Cart',
+                })
+            "
+            class="description"
+          >
             <div class="title">
               <p class="body-2">Buffer Jacket</p>
             </div>
@@ -40,7 +66,20 @@
           <div class="image">
             <img src="/images/img3.png" />
           </div>
-          <div class="description">
+          <div
+            @click="
+              mainStore.addToCart({
+                name: 'Cargo Hoodie Jacket',
+                price: 110,
+                image: '/images/img3.png',
+              }),
+                mainStore.addToast({
+                  color: 'black',
+                  message: 'Cargo Hoodie Jacket Added To Cart',
+                })
+            "
+            class="description"
+          >
             <div class="title">
               <p class="body-2">Cargo Hoodie Jacket</p>
             </div>
@@ -65,6 +104,8 @@
 <script setup>
 import SectionHeader from "./SectionHeader.vue";
 import ItemIcons from "./ItemIcons.vue";
+import { useMainStore } from "../stores";
+const mainStore = useMainStore();
 </script>
 
 <style lang="scss" scoped></style>

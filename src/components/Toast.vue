@@ -1,6 +1,6 @@
 <template>
   <div
-    :style="`background-color: ${color}; top:${9 * toastId}rem`"
+    :style="`background-color: ${color}; top:${9 * id + 3}rem`"
     class="toast"
     :id="`toast${toastId}`"
   >
@@ -34,7 +34,7 @@ const props = defineProps(["message", "color", "id"]);
 const showToast = ref("false");
 const timeline = gsap.timeline();
 
-const toastId = ref(props.id + 3);
+const toastId = ref(props.id);
 
 function runToast() {
   timeline.to(`#toast${toastId.value}`, {

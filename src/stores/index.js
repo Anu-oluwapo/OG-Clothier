@@ -4,6 +4,9 @@ export const useMainStore = defineStore("main", {
   state: () => {
     return {
       toasts: [],
+      cart: [],
+      bookmarks: [],
+      likeList: [],
     };
   },
 
@@ -17,6 +20,10 @@ export const useMainStore = defineStore("main", {
 
     removeToast(toast) {
       this.toasts.splice(this.toasts.indexOf(toast), 1);
+    },
+
+    addToCart(item) {
+      this.cart.push(item);
     },
   },
 });
